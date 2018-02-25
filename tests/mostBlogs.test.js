@@ -1,7 +1,7 @@
 const listHelper = require('../utils/list_helper')
 const Testidata = require('./testidata')
 
-describe.skip('most blogs', () => {
+describe('most blogs', () => {
 
     test('when list has only one blog return object with author of that blog and 1', () => {
         const result = listHelper.mostBlogs(Testidata.listWithOneBlog)

@@ -1,7 +1,7 @@
 const listHelper = require('../utils/list_helper')
 const Testidata = require('./testidata')
 
-describe.skip('total likes', () => {
+describe('total likes', () => {
 
     test('when list has only one blog equals the likes of that', () => {
         const result = listHelper.totalLikes(Testidata.listWithOneBlog)

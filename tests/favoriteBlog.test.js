@@ -1,7 +1,7 @@
 const listHelper = require('../utils/list_helper')
 const Testidata = require('./testidata')
 
-describe.skip('favorite blog', () => {
+describe('favorite blog', () => {
 
     test('when list has only one blog return that blog', () => {
         const result = listHelper.favoriteBlog(Testidata.listWithOneBlog)
