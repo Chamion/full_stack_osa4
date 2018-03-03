@@ -99,12 +99,12 @@ blogsRouter.delete('/:id', async (request, response) => {
 })
 
 blogsRouter.put('/:id', async (request, response) => {
-    const token = request.token
-    const decodedToken = jwt.verify(token, process.env.SECRET)
+    //const token = request.token
+    //const decodedToken = jwt.verify(token, process.env.SECRET)
 
-    if (!token || !decodedToken.id) {
+    /*if (!token || !decodedToken.id) {
         return response.status(401).json({ error: 'token missing or invalid' })
-    }
+    }*/
     if(typeof request.body.blog !== 'object') {
         response.status(400).json({error: 'Missing required argument blog'})
         return
@@ -140,10 +140,10 @@ blogsRouter.put('/:id', async (request, response) => {
         return
     }
     oldBlog = oldBlog[0]
-    if(oldBlog.user.toString() !== decodedToken.id) {
+    /*if(oldBlog.user.toString() !== decodedToken.id) {
         response.status(403).json({error: 'Invalid userId'})
         return
-    }
+    }*/
     blog.user = oldBlog.user
     const query = {
         '_id': request.params.id
