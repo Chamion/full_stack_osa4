@@ -108,11 +108,11 @@ blogsRouter.put('/:id', async (request, response) => {
     if(typeof request.body.blog !== 'object') {
         response.status(400).json({error: 'Missing required argument blog'})
         return
-    } else if('user' in request.body.blog) {
+    }/* else if('user' in request.body.blog) {
         console.log('User attempted to change blog.user')
         response.status(400).json({error: 'Found unexpected argument blog.user'})
         return
-    }
+    }*/
     const blog = new Blog(request.body.blog)
     if(blog.title === undefined) {
         response.status(400).json({error: 'Missing required argument blog.title'})
